@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Thunder Gym</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">THUNDER <span class="text-primary-neon">GYM</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="plans.html">Plans</a></li>
+          <li class="nav-item"><a class="nav-link" href="trainers.html">Trainers</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <!-- Features Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+              Features
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark custom-dropdown-menu">
+              <li><a class="dropdown-item" href="#">Personal Training</a></li>
+              <li><a class="dropdown-item" href="#">Diet Plans</a></li>
+              <li><a class="dropdown-item" href="#">Cardio Zone</a></li>
+              <li><a class="dropdown-item" href="#">Weight Training</a></li>
+              <li><a class="dropdown-item" href="#">CrossFit</a></li>
+              <li><a class="dropdown-item" href="#">24/7 Support</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header page-header-contact">
+    <div class="container" data-aos="fade-up">
+      <h1 class="text-primary-neon">Contact Us</h1>
+      <p>Get in touch and start your fitness journey.</p>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Contact Info -->
+        <div class="col-lg-4 mb-5" data-aos="fade-right">
+          <h3 class="mb-4">Get In Touch</h3>
+          <p class="text-secondary mb-4">We're here to help and answer any question you might have. We look forward to hearing from you.</p>
+          
+          <div class="contact-info-box">
+            <i class="fas fa-map-marker-alt"></i>
+            <h5 class="text-light">Our Location</h5>
+            <p class="text-secondary">Coimbatore, Tamil Nadu, India</p>
+          </div>
+          
+          <div class="contact-info-box">
+            <i class="fas fa-envelope"></i>
+            <h5 class="text-light">Email Us</h5>
+            <p class="text-secondary">info@thundergym.com</p>
+          </div>
+          
+          <div class="contact-info-box">
+            <i class="fas fa-phone-alt"></i>
+            <h5 class="text-light">Call Us</h5>
+            <p class="text-secondary">+91 98765 43210</p>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-lg-8" data-aos="fade-left">
+          <div class="contact-form">
+            <h3 class="mb-4 text-center text-primary-neon">Send Us a Message</h3>
+            <form onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control" placeholder="Your Email" required>
+                </div>
+              </div>
+              <input type="tel" class="form-control" placeholder="Your Phone (Optional)">
+              <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+              <div class="text-center mt-3">
+                <button type="submit" class="btn btn-neon w-100">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="pb-5" data-aos="fade-up">
+    <div class="container">
+      <div class="map-container">
+        <!-- Google Maps Embed for Coimbatore -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125322.44173167154!2d76.88483321523315!3d11.014051052525164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859af2f971cb5%3A0x2fc1c81e183ed282!2sCoimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <h5 class="navbar-brand mb-3">THUNDER <span class="text-primary-neon">GYM</span></h5>
+          <p>Unleash your power and transform your body with our state-of-the-art facilities and expert trainers.</p>
+          <div class="social-icons mt-3">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5>Quick Links</h5>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="plans.html">Plans</a>
+            <a href="trainers.html">Trainers</a>
+            <a href="gallery.html">Gallery</a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Features</h5>
+          <div class="footer-links">
+            <a href="#">Personal Training</a>
+            <a href="#">CrossFit</a>
+            <a href="#">Cardio Zone</a>
+            <a href="#">Diet Plans</a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Contact Us</h5>
+          <p><i class="fas fa-map-marker-alt text-primary-neon me-2"></i> Coimbatore, Tamil Nadu</p>
+          <p><i class="fas fa-phone text-primary-neon me-2"></i> +91 98765 43210</p>
+          <p><i class="fas fa-envelope text-primary-neon me-2"></i> info@thundergym.com</p>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-12 text-center">
+          <hr class="border-secondary mb-4 custom-hr">
+          <p class="mb-0">&copy; 2026 Thunder Gym. All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>
