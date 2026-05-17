@@ -19,25 +19,58 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Active Link Highlighting
-  const currentLocation = location.href;
-  const navLinks = document.querySelectorAll('.nav-link');
-  const navLength = navLinks.length;
+  // Active Link Highlighting & Smooth Scrolling
+  const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
   
-  // Set Home as active by default if at root, else find exact match
-  let matched = false;
-  for (let i = 0; i < navLength; i++) {
-    if (navLinks[i].href === currentLocation) {
-      navLinks[i].classList.add('active');
-      matched = true;
-    } else {
-      navLinks[i].classList.remove('active');
-    }
-  }
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetSection = document.querySelector(targetId);
+      if (targetSection) {
+        // Close mobile navbar if open
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse.classList.contains('show')) {
+          // Use Bootstrap API if available
+          if (typeof bootstrap !== 'undefined') {
+            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+            if (bsCollapse) bsCollapse.hide();
+          } else {
+            navbarCollapse.classList.remove('show');
+          }
+        }
+        
+        // Scroll to section
+        const offsetTop = targetSection.offsetTop - 70; // Adjust for navbar height
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Highlight Active Link on Scroll
+  const sections = document.querySelectorAll('div[id], section[id]');
+  const navHeight = 80;
   
-  if (!matched && (currentLocation.endsWith('/') || currentLocation.endsWith('index.html'))) {
-    document.querySelector('.nav-link[href="index.html"]')?.classList.add('active');
-  }
+  window.addEventListener('scroll', () => {
+    let current = '';
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      if (window.scrollY >= (sectionTop - navHeight - 10)) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
 
   // Counter Animation
   const counters = document.querySelectorAll('.counter');
@@ -95,3 +128,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// WhatsApp Contact Form Integration
+function sendWhatsAppMessage(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('contactName').value.trim();
+  const email = document.getElementById('contactEmail').value.trim();
+  const phone = document.getElementById('contactPhone').value.trim() || 'Not provided';
+  const message = document.getElementById('contactMessage').value.trim();
+
+  if (!name || !email || !message) {
+    // HTML5 validation should catch this, but just in case
+    return;
+  }
+
+  const text = `Hi Thunder Gym,\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`;
+  
+  const encodedText = encodeURIComponent(text);
+  const whatsappUrl = `https://wa.me/918754678824?text=${encodedText}`;
+
+  window.open(whatsappUrl, '_blank');
+  
+  document.getElementById('contactForm').reset();
+}

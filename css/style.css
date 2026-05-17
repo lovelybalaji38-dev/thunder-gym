@@ -533,3 +533,55 @@ footer h5 {
   border-radius: 15px;
   border: none;
 }
+
+/* Floating Action Buttons */
+.floating-buttons {
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 99;
+}
+
+.float-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.float-btn:hover {
+  transform: translateY(-5px) scale(1.1);
+  color: #fff;
+}
+
+.location-btn {
+  background-color: #EA4335;
+}
+.location-btn:hover {
+  box-shadow: 0 5px 15px rgba(234, 67, 53, 0.5);
+}
+
+.call-btn {
+  background-color: #007bff;
+}
+.call-btn:hover {
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.5);
+}
+
+.whatsapp-btn {
+  background-color: #25D366;
+}
+.whatsapp-btn:hover {
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.5);
+}
+
